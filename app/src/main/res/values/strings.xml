@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Score Keeper App</string>
+    <string name="reset">Reset</string>
+    <string name="team_a_flag">Team A flag</string>
+    <string name="team_a_name">Team A Name</string>
+    <string name="team_b_flag">Team B flag</string>
+    <string name="team_b_name">Team B Name</string>
+    <string name="score_separator">-</string>
+    <string name="score">Score</string>
+    <string name="fouls">Fouls</string>
+    <string name="corners">Corners</string>
+    <string name="penalties">Penalities</string>
+    <string name="zero">0</string>
+</resources>

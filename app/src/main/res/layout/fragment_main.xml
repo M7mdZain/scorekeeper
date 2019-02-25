@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/foot"
+    android:paddingTop="@dimen/margin_32"
+    android:paddingBottom="@dimen/margin_32"
+    tools:context="com.example.android.scorekeeperapp.MainFragment">
+
+    <RelativeLayout
+        android:id="@+id/llFlags"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="@dimen/margin_8"
+        android:layout_marginRight="@dimen/margin_8">
+
+        <LinearLayout
+            android:id="@+id/llRedFlag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/ivTeamAFlag"
+                android:layout_width="@dimen/flag_dim"
+                android:layout_height="@dimen/flag_dim"
+                android:contentDescription="@string/team_a_flag"
+                android:src="@drawable/ic_flag_red" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/team_a_name"
+                android:src="@drawable/team_a" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            tools:ignore="RelativeOverlap">
+
+            <TextView
+                android:id="@+id/tvTeamAScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/margin_16"
+                android:layout_marginLeft="@dimen/margin_16"
+                android:textColor="@color/textColor"
+                android:textSize="@dimen/text_40"
+                android:textStyle="bold"
+                tools:text="@string/zero" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/margin_16"
+                android:layout_marginRight="@dimen/margin_16"
+                android:text="@string/score_separator"
+                android:textColor="@color/textColor"
+                android:textSize="@dimen/text_40"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvTeamBScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="@dimen/margin_16"
+                android:layout_marginRight="@dimen/margin_16"
+                android:textColor="@color/textColor"
+                android:textSize="@dimen/text_40"
+                android:textStyle="bold"
+                tools:text="@string/zero" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/ivTeamBFlag"
+                android:layout_width="@dimen/flag_dim"
+                android:layout_height="@dimen/flag_dim"
+                android:contentDescription="@string/team_b_flag"
+                android:src="@drawable/ic_flag_white" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/team_b_name"
+                android:src="@drawable/team_b" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <FrameLayout
+        android:id="@+id/flRematch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/llFlags"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="@dimen/margin_8"
+        android:layout_marginBottom="@dimen/margin_8"
+        android:background="@drawable/rounded_corner_button">
+
+        <Button
+            android:id="@+id/btnRematch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground"
+            android:text="@string/reset"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/text_16" />
+
+    </FrameLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/flRematch"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="@dimen/margin_16">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/rlScore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_16"
+                android:layout_marginRight="@dimen/margin_16"
+                android:layout_marginBottom="@dimen/margin_8"
+                android:orientation="horizontal">
+
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:background="@drawable/rounded_corner_button">
+
+                    <Button
+                        android:id="@+id/btnTeamAScore"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="?android:attr/selectableItemBackground"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/text_30"
+                        android:textStyle="bold"
+                        tools:text="@string/zero" />
+
+                </FrameLayout>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="@dimen/margin_8"
+                    android:layout_marginRight="@dimen/margin_8"
+                    android:text="@string/score"
+                    android:textColor="@color/textColor"
+                    android:textSize="@dimen/text_25"
+                    android:textStyle="bold|italic" />
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/rounded_corner_button"
+                    tools:ignore="RelativeOverlap">
+
+                    <Button
+                        android:id="@+id/btnTeamBScore"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="?android:attr/selectableItemBackground"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/text_30"
+                        android:textStyle="bold"
+                        tools:text="@string/zero" />
+                </FrameLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlFouls"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_16"
+                android:layout_marginTop="@dimen/margin_8"
+                android:layout_marginRight="@dimen/margin_16"
+                android:layout_marginBottom="@dimen/margin_8"
+                android:orientation="horizontal">
+
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_gravity="start"
+                    android:background="@drawable/rounded_corner_button">
+
+                    <Button
+                        android:id="@+id/btnTeamAFouls"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="?android:attr/selectableItemBackground"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/text_30"
+                        android:textStyle="bold"
+                        tools:text="@string/zero" />
+
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/tvFouls"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="@string/fouls"
+                    android:textColor="@color/textColor"
+                    android:textSize="@dimen/text_25"
+                    android:textStyle="bold|italic" />
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/rounded_corner_button"
+                    tools:ignore="RelativeOverlap">
+
+                    <Button
+                        android:id="@+id/btnTeamBFouls"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="?android:attr/selectableItemBackground"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/text_30"
+                        android:textStyle="bold"
+                        tools:text="@string/zero" />
+                </FrameLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlCorner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_16"
+                android:layout_marginTop="@dimen/margin_8"
+                android:layout_marginRight="@dimen/margin_16"
+                android:layout_marginBottom="@dimen/margin_8"
+                android:orientation="horizontal">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_gravity="start"
+                    android:background="@drawable/rounded_corner_button">
+
+                    <Button
+                        android:id="@+id/btnTeamACorners"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="?android:attr/selectableItemBackground"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/text_30"
+                        android:textStyle="bold"
+                        tools:text="@string/zero" />
+
+                </FrameLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="@dimen/margin_8"
+                    android:layout_marginRight="@dimen/margin_8"
+                    android:text="@string/corners"
+                    android:textColor="@color/textColor"
+                    android:textSize="@dimen/text_25"
+                    android:textStyle="bold|italic" />
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/rounded_corner_button"
+                    tools:ignore="RelativeOverlap">
+
+                    <Button
+                        android:id="@+id/btnTeamBCorners"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="?android:attr/selectableItemBackground"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/text_30"
+                        android:textStyle="bold"
+                        tools:text="@string/zero" />
+                </FrameLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rlPenalties"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_16"
+                android:layout_marginTop="@dimen/margin_8"
+                android:layout_marginRight="@dimen/margin_16"
+                android:orientation="horizontal">
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_gravity="start"
+                    android:background="@drawable/rounded_corner_button">
+
+                    <Button
+                        android:id="@+id/btnTeamAPenalties"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="?android:attr/selectableItemBackground"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/text_30"
+                        android:textStyle="bold"
+                        tools:text="@string/zero" />
+
+                </FrameLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="@dimen/margin_8"
+                    android:layout_marginRight="@dimen/margin_8"
+                    android:text="@string/penalties"
+                    android:textColor="@color/textColor"
+                    android:textSize="@dimen/text_25"
+                    android:textStyle="bold|italic" />
+
+                <FrameLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/rounded_corner_button"
+                    tools:ignore="RelativeOverlap">
+
+                    <Button
+                        android:id="@+id/btnTeamBPenalties"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="?android:attr/selectableItemBackground"
+                        android:textColor="@android:color/white"
+                        android:textSize="@dimen/text_30"
+                        android:textStyle="bold"
+                        tools:text="@string/zero" />
+                </FrameLayout>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
